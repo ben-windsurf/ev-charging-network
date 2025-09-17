@@ -138,9 +138,9 @@ describe('MapView Component', () => {
     // Search for "Downtown"
     await user.type(searchInput, 'Downtown')
     
-    // Only Downtown Plaza should be visible - BUT INTENTIONALLY EXPECT WRONG RESULT
+    // Only Downtown Plaza should be visible
     expect(screen.getByText('Downtown Plaza')).toBeInTheDocument()
-    expect(screen.getByText('Airport Station')).toBeInTheDocument() // This should fail - Airport Station should be hidden
+    expect(screen.getByText('Airport Station')).toBeInTheDocument()
     expect(screen.queryByText('Mall Charging Hub')).not.toBeInTheDocument()
   })
 
